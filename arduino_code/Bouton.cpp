@@ -31,11 +31,15 @@ void Bouton::led_program(int i)
 void Bouton::swap_state()
 {
     if(m_led_on)
+    {
         digitalWrite(m_port_led, LOW);
+        m_led_on = false;
+    }
     else
+    {
         digitalWrite(m_port_led, HIGH);
-    
-    m_led_on = m_led_on ? false : true;
+        m_led_on = true;
+    }
 }
 
 bool Bouton::pressed()
