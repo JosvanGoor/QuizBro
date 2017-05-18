@@ -1,0 +1,5 @@
+{
+    "board": "arduino:avr:unowifi",
+    "sketch": "arduino_code/arduino.ino",
+    "port": "/dev/ttyACM0"
+}

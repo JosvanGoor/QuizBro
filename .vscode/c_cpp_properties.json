@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "/home/jos/.arduino15/packages/arduino/hardware/avr/1.6.18/cores/arduino"
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": false,
+                "path": [
+                    "/home/jos/.arduino15/packages/arduino/hardware/avr/1.6.18/cores/arduino"
+                ]
+            }
+        }
+    ]
+}
