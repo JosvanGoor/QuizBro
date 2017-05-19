@@ -14,7 +14,7 @@
    <string>QuizBro - QuizMaster</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QGroupBox" name="Buttoncontrol">
+   <widget class="QGroupBox" name="box_button_control">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -29,7 +29,7 @@
     <property name="title">
      <string>Button control:</string>
     </property>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="lbl_fastest_press">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -42,7 +42,7 @@
       <string>Fastest press:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_2">
+    <widget class="QLabel" name="lbl_press_info">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -68,7 +68,7 @@
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
-    <widget class="QRadioButton" name="radioButton_3">
+    <widget class="QRadioButton" name="rb_buzzer_beater">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -81,7 +81,7 @@
       <string>&quot;Beat the buzzer&quot; Mode</string>
      </property>
     </widget>
-    <widget class="QRadioButton" name="radioButton_4">
+    <widget class="QRadioButton" name="rb_free_buzzer">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -93,8 +93,11 @@
      <property name="text">
       <string>&quot;Free buzzer&quot; Mode</string>
      </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="btn_unlock_buzzers">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -108,7 +111,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="Greenbutton">
+   <widget class="QGroupBox" name="box_green_button">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -120,7 +123,7 @@
     <property name="title">
      <string>Green button</string>
     </property>
-    <widget class="QLabel" name="label_3">
+    <widget class="QLabel" name="lbl_green_short_audio">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -133,7 +136,7 @@
       <string>Short audio:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_4">
+    <widget class="QLabel" name="lbl_green_long_audio">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -146,7 +149,7 @@
       <string>Long audio:</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_4">
+    <widget class="QPushButton" name="btn_green_set_short_audio">
      <property name="geometry">
       <rect>
        <x>310</x>
@@ -159,7 +162,7 @@
       <string>Set</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_5">
+    <widget class="QPushButton" name="btn_green_set_long_audio">
      <property name="geometry">
       <rect>
        <x>310</x>
@@ -173,7 +176,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="Yellowbutton">
+   <widget class="QGroupBox" name="box_yellow_button">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -185,7 +188,7 @@
     <property name="title">
      <string>Yellow button</string>
     </property>
-    <widget class="QLabel" name="label_5">
+    <widget class="QLabel" name="lbl_yellow_short_audio">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -198,7 +201,7 @@
       <string>Short audio:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_6">
+    <widget class="QLabel" name="lbl_yellow_long_audio">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -211,7 +214,7 @@
       <string>Long audio:</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_6">
+    <widget class="QPushButton" name="btn_yellow_set_short_audio">
      <property name="geometry">
       <rect>
        <x>310</x>
@@ -224,7 +227,7 @@
       <string>Set</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_7">
+    <widget class="QPushButton" name="btn_yellow_set_long_audio">
      <property name="geometry">
       <rect>
        <x>310</x>
@@ -238,7 +241,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="Bluebutton">
+   <widget class="QGroupBox" name="box_blue_button">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -250,7 +253,7 @@
     <property name="title">
      <string>Blue button</string>
     </property>
-    <widget class="QLabel" name="label_7">
+    <widget class="QLabel" name="lbl_blue_short_audio">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -263,7 +266,7 @@
       <string>Short audio:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_8">
+    <widget class="QLabel" name="lbl_blue_long_audio">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -276,7 +279,7 @@
       <string>Long audio:</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_8">
+    <widget class="QPushButton" name="btn_blue_set_short_audio">
      <property name="geometry">
       <rect>
        <x>310</x>
@@ -289,7 +292,7 @@
       <string>Set</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_9">
+    <widget class="QPushButton" name="btn_blue_set_long_audio">
      <property name="geometry">
       <rect>
        <x>310</x>
@@ -303,7 +306,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="Redbutton">
+   <widget class="QGroupBox" name="box_red_button">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -315,7 +318,7 @@
     <property name="title">
      <string>Red button</string>
     </property>
-    <widget class="QLabel" name="label_9">
+    <widget class="QLabel" name="lbl_red_short_audio">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -328,7 +331,7 @@
       <string>Short audio:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_10">
+    <widget class="QLabel" name="lbl_red_long_audio">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -341,7 +344,7 @@
       <string>Long audio:</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_10">
+    <widget class="QPushButton" name="btn_red_set_short_audio">
      <property name="geometry">
       <rect>
        <x>310</x>
@@ -354,7 +357,7 @@
       <string>Set</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_11">
+    <widget class="QPushButton" name="btn_red_set_long_audio">
      <property name="geometry">
       <rect>
        <x>310</x>
@@ -368,7 +371,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="Audiocontrol">
+   <widget class="QGroupBox" name="box_audiocontrol">
     <property name="geometry">
      <rect>
       <x>250</x>
@@ -380,7 +383,7 @@
     <property name="title">
      <string>Audio control</string>
     </property>
-    <widget class="QLabel" name="label_11">
+    <widget class="QLabel" name="lbl_now_playing">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -393,7 +396,7 @@
       <string>Now playing:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_12">
+    <widget class="QLabel" name="lbl_audio_info">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -419,7 +422,7 @@
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
-    <widget class="QRadioButton" name="radioButton">
+    <widget class="QRadioButton" name="rb_play_short">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -432,7 +435,7 @@
       <string>Play short fragment</string>
      </property>
     </widget>
-    <widget class="QRadioButton" name="radioButton_2">
+    <widget class="QRadioButton" name="rb_play_long">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -444,8 +447,11 @@
      <property name="text">
       <string>Play long fragment</string>
      </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
     </widget>
-    <widget class="QCheckBox" name="checkBox">
+    <widget class="QCheckBox" name="chb_mute">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -458,7 +464,7 @@
       <string>Mute</string>
      </property>
     </widget>
-    <widget class="QCheckBox" name="checkBox_2">
+    <widget class="QCheckBox" name="chb_simultaneous">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -470,9 +476,12 @@
      <property name="text">
       <string>Allow simultaneous</string>
      </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox">
+   <widget class="QGroupBox" name="box_blinkspeed">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -484,7 +493,7 @@
     <property name="title">
      <string>Blink speed</string>
     </property>
-    <widget class="QLabel" name="label_13">
+    <widget class="QLabel" name="lbl_blinkspeed">
      <property name="geometry">
       <rect>
        <x>370</x>
@@ -500,7 +509,7 @@
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QSlider" name="horizontalSlider">
+    <widget class="QSlider" name="sld_blinkspeed">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -509,12 +518,30 @@
        <height>16</height>
       </rect>
      </property>
+     <property name="minimum">
+      <number>0</number>
+     </property>
+     <property name="maximum">
+      <number>5000</number>
+     </property>
+     <property name="singleStep">
+      <number>50</number>
+     </property>
+     <property name="value">
+      <number>1000</number>
+     </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
+     <property name="tickPosition">
+      <enum>QSlider::TicksBelow</enum>
+     </property>
+     <property name="tickInterval">
+      <number>500</number>
+     </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox_2">
+   <widget class="QGroupBox" name="box_backgrounds">
     <property name="geometry">
      <rect>
       <x>460</x>
@@ -526,7 +553,7 @@
     <property name="title">
      <string>Background - (beamer: available?)</string>
     </property>
-    <widget class="QListWidget" name="listWidget">
+    <widget class="QListWidget" name="lst_backgrounds">
      <property name="geometry">
       <rect>
        <x>1</x>
@@ -537,7 +564,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox_3">
+   <widget class="QGroupBox" name="scorebox_red">
     <property name="geometry">
      <rect>
       <x>460</x>
@@ -549,7 +576,7 @@
     <property name="title">
      <string>Red score</string>
     </property>
-    <widget class="QLabel" name="label_14">
+    <widget class="QLabel" name="lbl_red_score">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -559,10 +586,10 @@
       </rect>
      </property>
      <property name="text">
-      <string>Score:</string>
+      <string>Score: 0</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="btn_red_m10">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -575,7 +602,7 @@
       <string>-10</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QPushButton" name="btn_red_m15">
      <property name="geometry">
       <rect>
        <x>50</x>
@@ -588,7 +615,7 @@
       <string>-5</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_12">
+    <widget class="QPushButton" name="btn_red_m1">
      <property name="geometry">
       <rect>
        <x>90</x>
@@ -601,7 +628,7 @@
       <string>-1</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_13">
+    <widget class="QPushButton" name="btn_red_p1">
      <property name="geometry">
       <rect>
        <x>130</x>
@@ -614,7 +641,7 @@
       <string>+1</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_14">
+    <widget class="QPushButton" name="btn_red_p5">
      <property name="geometry">
       <rect>
        <x>170</x>
@@ -627,7 +654,7 @@
       <string>+5</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_15">
+    <widget class="QPushButton" name="btn_red_p10">
      <property name="geometry">
       <rect>
        <x>210</x>
@@ -641,7 +668,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox_4">
+   <widget class="QGroupBox" name="scorebox_yellow">
     <property name="geometry">
      <rect>
       <x>460</x>
@@ -653,7 +680,7 @@
     <property name="title">
      <string>Yellow score</string>
     </property>
-    <widget class="QLabel" name="label_15">
+    <widget class="QLabel" name="lbl_yellow_score">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -663,10 +690,10 @@
       </rect>
      </property>
      <property name="text">
-      <string>Score:</string>
+      <string>Score: 0</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_16">
+    <widget class="QPushButton" name="btn_yellow_m10">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -679,7 +706,7 @@
       <string>-10</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_17">
+    <widget class="QPushButton" name="btn_yellow_m5">
      <property name="geometry">
       <rect>
        <x>50</x>
@@ -692,7 +719,7 @@
       <string>-5</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_18">
+    <widget class="QPushButton" name="btn_yellow_m1">
      <property name="geometry">
       <rect>
        <x>90</x>
@@ -705,7 +732,7 @@
       <string>-1</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_19">
+    <widget class="QPushButton" name="btn_yellow_p1">
      <property name="geometry">
       <rect>
        <x>130</x>
@@ -718,7 +745,7 @@
       <string>+1</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_20">
+    <widget class="QPushButton" name="btn_yellow_p5">
      <property name="geometry">
       <rect>
        <x>170</x>
@@ -731,7 +758,7 @@
       <string>+5</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_21">
+    <widget class="QPushButton" name="btn_yellow_p10">
      <property name="geometry">
       <rect>
        <x>210</x>
@@ -745,7 +772,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox_5">
+   <widget class="QGroupBox" name="scorebox_blue">
     <property name="geometry">
      <rect>
       <x>460</x>
@@ -757,7 +784,7 @@
     <property name="title">
      <string>Blue score</string>
     </property>
-    <widget class="QLabel" name="label_16">
+    <widget class="QLabel" name="lbl_blue_score">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -767,10 +794,10 @@
       </rect>
      </property>
      <property name="text">
-      <string>Score:</string>
+      <string>Score: 0</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_22">
+    <widget class="QPushButton" name="btn_blue_m10">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -783,7 +810,7 @@
       <string>-10</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_23">
+    <widget class="QPushButton" name="btn_blue_m5">
      <property name="geometry">
       <rect>
        <x>50</x>
@@ -796,7 +823,7 @@
       <string>-5</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_24">
+    <widget class="QPushButton" name="btn_blue_m1">
      <property name="geometry">
       <rect>
        <x>90</x>
@@ -809,7 +836,7 @@
       <string>-1</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_25">
+    <widget class="QPushButton" name="btn_blue_p1">
      <property name="geometry">
       <rect>
        <x>130</x>
@@ -822,7 +849,7 @@
       <string>+1</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_26">
+    <widget class="QPushButton" name="btn_blue_p5">
      <property name="geometry">
       <rect>
        <x>170</x>
@@ -835,7 +862,7 @@
       <string>+5</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_27">
+    <widget class="QPushButton" name="btn_blue_p10">
      <property name="geometry">
       <rect>
        <x>210</x>
@@ -849,7 +876,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox_6">
+   <widget class="QGroupBox" name="scorebox_green">
     <property name="geometry">
      <rect>
       <x>460</x>
@@ -861,7 +888,7 @@
     <property name="title">
      <string>Green score</string>
     </property>
-    <widget class="QLabel" name="label_18">
+    <widget class="QLabel" name="lbl_green_score">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -871,10 +898,10 @@
       </rect>
      </property>
      <property name="text">
-      <string>Score:</string>
+      <string>Score: 0</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_34">
+    <widget class="QPushButton" name="btn_green_m10">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -887,7 +914,7 @@
       <string>-10</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_35">
+    <widget class="QPushButton" name="btn_green_m5">
      <property name="geometry">
       <rect>
        <x>50</x>
@@ -900,7 +927,7 @@
       <string>-5</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_36">
+    <widget class="QPushButton" name="btn_green_m1">
      <property name="geometry">
       <rect>
        <x>90</x>
@@ -913,7 +940,7 @@
       <string>-1</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_37">
+    <widget class="QPushButton" name="btn_green_p1">
      <property name="geometry">
       <rect>
        <x>130</x>
@@ -926,7 +953,7 @@
       <string>+1</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_38">
+    <widget class="QPushButton" name="btn_green_p5">
      <property name="geometry">
       <rect>
        <x>170</x>
@@ -939,7 +966,7 @@
       <string>+5</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_39">
+    <widget class="QPushButton" name="btn_green_p10">
      <property name="geometry">
       <rect>
        <x>210</x>
@@ -953,7 +980,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox_7">
+   <widget class="QGroupBox" name="forbidden_answer_box">
     <property name="geometry">
      <rect>
       <x>730</x>
@@ -965,7 +992,7 @@
     <property name="title">
      <string>Forbidden Answers</string>
     </property>
-    <widget class="QComboBox" name="comboBox">
+    <widget class="QComboBox" name="drd_questions">
      <property name="geometry">
       <rect>
        <x>88</x>
@@ -975,7 +1002,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QLabel" name="label_19">
+    <widget class="QLabel" name="lbl_question">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -988,7 +1015,7 @@
       <string>Question:</string>
      </property>
     </widget>
-    <widget class="QListWidget" name="listWidget_2">
+    <widget class="QListWidget" name="lst_answers">
      <property name="geometry">
       <rect>
        <x>1</x>
