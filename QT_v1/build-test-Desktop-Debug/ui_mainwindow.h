@@ -75,7 +75,7 @@ public:
     QGroupBox *scorebox_red;
     QLabel *lbl_red_score;
     QPushButton *btn_red_m10;
-    QPushButton *btn_red_m15;
+    QPushButton *btn_red_m5;
     QPushButton *btn_red_m1;
     QPushButton *btn_red_p1;
     QPushButton *btn_red_p5;
@@ -261,9 +261,9 @@ public:
         btn_red_m10 = new QPushButton(scorebox_red);
         btn_red_m10->setObjectName(QStringLiteral("btn_red_m10"));
         btn_red_m10->setGeometry(QRect(10, 50, 31, 23));
-        btn_red_m15 = new QPushButton(scorebox_red);
-        btn_red_m15->setObjectName(QStringLiteral("btn_red_m15"));
-        btn_red_m15->setGeometry(QRect(50, 50, 31, 23));
+        btn_red_m5 = new QPushButton(scorebox_red);
+        btn_red_m5->setObjectName(QStringLiteral("btn_red_m5"));
+        btn_red_m5->setGeometry(QRect(50, 50, 31, 23));
         btn_red_m1 = new QPushButton(scorebox_red);
         btn_red_m1->setObjectName(QStringLiteral("btn_red_m1"));
         btn_red_m1->setGeometry(QRect(90, 50, 31, 23));
@@ -404,12 +404,12 @@ public:
         chb_mute->setText(QApplication::translate("MainWindow", "Mute", Q_NULLPTR));
         chb_simultaneous->setText(QApplication::translate("MainWindow", "Allow simultaneous", Q_NULLPTR));
         box_blinkspeed->setTitle(QApplication::translate("MainWindow", "Blink speed", Q_NULLPTR));
-        lbl_blinkspeed->setText(QApplication::translate("MainWindow", "1 sec", Q_NULLPTR));
+        lbl_blinkspeed->setText(QApplication::translate("MainWindow", "1.0 sec", Q_NULLPTR));
         box_backgrounds->setTitle(QApplication::translate("MainWindow", "Background - (beamer: available?)", Q_NULLPTR));
         scorebox_red->setTitle(QApplication::translate("MainWindow", "Red score", Q_NULLPTR));
         lbl_red_score->setText(QApplication::translate("MainWindow", "Score: 0", Q_NULLPTR));
         btn_red_m10->setText(QApplication::translate("MainWindow", "-10", Q_NULLPTR));
-        btn_red_m15->setText(QApplication::translate("MainWindow", "-5", Q_NULLPTR));
+        btn_red_m5->setText(QApplication::translate("MainWindow", "-5", Q_NULLPTR));
         btn_red_m1->setText(QApplication::translate("MainWindow", "-1", Q_NULLPTR));
         btn_red_p1->setText(QApplication::translate("MainWindow", "+1", Q_NULLPTR));
         btn_red_p5->setText(QApplication::translate("MainWindow", "+5", Q_NULLPTR));

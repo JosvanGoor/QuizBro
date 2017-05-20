@@ -503,7 +503,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>1 sec</string>
+      <string>1.0 sec</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -602,7 +602,7 @@
       <string>-10</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="btn_red_m15">
+    <widget class="QPushButton" name="btn_red_m5">
      <property name="geometry">
       <rect>
        <x>50</x>
