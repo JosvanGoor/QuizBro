@@ -1,6 +1,6 @@
 #include "Bouton.hpp"
 
-Bouton red(7, 8);
+Bouton red(12, 8);
 int state = -3;
 long touch = 0;
 
@@ -14,6 +14,8 @@ void setup()
     red.led_program(state);
 
     pinMode(10, INPUT_PULLUP);
+    //red.led_program(LED_CONSTANT_ON);
+    red.led_program(1000);
 }
 
 /*
