@@ -1,4 +1,9 @@
 #include "mainwindow.h"
+
+#include <QDir>
+#include <QString>
+#include <QFileInfo>
+#include <QDirIterator>
 #include <QApplication>
 
 int main(int argc, char *argv[])

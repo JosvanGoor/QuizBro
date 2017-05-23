@@ -8,3 +8,7 @@ This folder contains code run by the arduino that connects the boutons.
 
 ## QT_v1
 This folder contains the prototype for the quizmaster control panel. The build is made in QT5.
+
+## QuizBro\_video\_node\_v1
+This folder contains the first iteration of the video node.
+TODO: make custom videosurface to prevent black frame between videos.

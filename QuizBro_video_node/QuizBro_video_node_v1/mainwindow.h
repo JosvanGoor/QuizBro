@@ -12,6 +12,9 @@ public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+    void fullscreen();
+    void exit_fullscreen();
+
 protected:
     DisplayWidget *m_display;
 };
