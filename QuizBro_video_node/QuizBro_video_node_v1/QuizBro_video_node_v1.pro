@@ -6,11 +6,14 @@
 
 QT      += core gui
 QT      += multimedia
+QT      += multimediawidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = QuizBro_video_node_v1
 TEMPLATE = app
+
+CONFIG  += c++14
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked as deprecated (the exact warnings
@@ -24,7 +27,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 
-SOURCES += main.cpp\
-        mainwindow.cpp
+SOURCES     +=  main.cpp \
+                mainwindow.cpp \
+                DisplayWidget.cpp
 
-HEADERS  += mainwindow.h
+HEADERS     +=  mainwindow.h \
+                DisplayWidget.hpp

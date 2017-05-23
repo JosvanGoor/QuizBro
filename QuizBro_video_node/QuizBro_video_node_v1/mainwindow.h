@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "DisplayWidget.hpp"
 
 class MainWindow : public QMainWindow
 {
@@ -12,8 +13,7 @@ public:
     ~MainWindow();
 
 protected:
-    /* Window parts */
-    QWidget *central_widget;
+    DisplayWidget *m_display;
 };
 
 #endif // MAINWINDOW_H

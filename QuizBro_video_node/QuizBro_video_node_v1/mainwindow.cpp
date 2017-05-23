@@ -1,13 +1,22 @@
 #include "mainwindow.h"
 
+#include <QMediaPlaylist>
+#include <QMediaPlayer>
+#include <QVideoWidget>
+#include <QMediaContent>
+
+#include "DisplayWidget.hpp"
+
+#include <unistd.h>
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
-    this->setObjectName(QStringLiteral("MainWindow"));
-    this->resize(1378, 768);
+    m_display = new DisplayWidget;
+    this->setCentralWidget(m_display);
 
-    central_widget = new QWidget(this);
-    central_widget->setObjectName(QStringLiteral("central_widget"));
+    m_display->display_video("file:///home/jos/Downloads/izombie.mkv");
+    m_display->display_image("//home/jos/Downloads/samples/bunny.jpg");
 }
 
 MainWindow::~MainWindow()

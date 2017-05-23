@@ -12,10 +12,10 @@ MAKEFILE      = Makefile
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_MULTIMEDIAWIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -D_REENTRANT
 CFLAGS        = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-CXXFLAGS      = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I../QuizBro_video_node_v1 -I. -isystem /usr/include/qt -isystem /usr/include/qt/QtWidgets -isystem /usr/include/qt/QtGui -isystem /usr/include/qt/QtCore -I. -isystem /usr/include/libdrm -I/usr/lib/qt/mkspecs/linux-g++
+CXXFLAGS      = -pipe -g -std=gnu++1y -Wall -W -D_REENTRANT -fPIC $(DEFINES)
+INCPATH       = -I../QuizBro_video_node_v1 -I. -isystem /usr/include/qt -isystem /usr/include/qt/QtMultimediaWidgets -isystem /usr/include/qt/QtMultimedia -isystem /usr/include/qt/QtWidgets -isystem /usr/include/qt/QtGui -isystem /usr/include/qt/QtNetwork -isystem /usr/include/qt/QtCore -I. -isystem /usr/include/libdrm -isystem /usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/lib/qt/mkspecs/linux-g++
 QMAKE         = /usr/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -35,8 +35,8 @@ COMPRESS      = gzip -9f
 DISTNAME      = QuizBro_video_node_v11.0.0
 DISTDIR = /home/jos/git/QuizBro/QuizBro_video_node/build-QuizBro_video_node_v1-Desktop-Debug/.tmp/QuizBro_video_node_v11.0.0
 LINK          = g++
-LFLAGS        = 
-LIBS          = $(SUBLIBS) -lQt5Widgets -lQt5Gui -lQt5Core -lGL -lpthread 
+LFLAGS        = -Wl,-rpath-link,/usr/lib
+LIBS          = $(SUBLIBS) -lQt5MultimediaWidgets -lQt5Multimedia -lQt5Widgets -lQt5Gui -lQt5Network -lQt5Core -lGL -lpthread -lpulse-mainloop-glib -lpulse -lglib-2.0 
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -49,10 +49,14 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../QuizBro_video_node_v1/main.cpp \
-		../QuizBro_video_node_v1/mainwindow.cpp moc_mainwindow.cpp
+		../QuizBro_video_node_v1/mainwindow.cpp \
+		../QuizBro_video_node_v1/DisplayWidget.cpp moc_mainwindow.cpp \
+		moc_DisplayWidget.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
-		moc_mainwindow.o
+		DisplayWidget.o \
+		moc_mainwindow.o \
+		moc_DisplayWidget.o
 DIST          = /usr/lib/qt/mkspecs/features/spec_pre.prf \
 		/usr/lib/qt/mkspecs/common/unix.conf \
 		/usr/lib/qt/mkspecs/common/linux.conf \
@@ -208,6 +212,7 @@ DIST          = /usr/lib/qt/mkspecs/features/spec_pre.prf \
 		/usr/lib/qt/mkspecs/features/qt_config.prf \
 		/usr/lib/qt/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/qt/mkspecs/features/spec_post.prf \
+		../QuizBro_video_node_v1/.qmake.stash \
 		/usr/lib/qt/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/qt/mkspecs/features/toolchain.prf \
 		/usr/lib/qt/mkspecs/features/default_pre.prf \
@@ -227,8 +232,10 @@ DIST          = /usr/lib/qt/mkspecs/features/spec_pre.prf \
 		/usr/lib/qt/mkspecs/features/exceptions.prf \
 		/usr/lib/qt/mkspecs/features/yacc.prf \
 		/usr/lib/qt/mkspecs/features/lex.prf \
-		../QuizBro_video_node_v1/QuizBro_video_node_v1.pro ../QuizBro_video_node_v1/mainwindow.h ../QuizBro_video_node_v1/main.cpp \
-		../QuizBro_video_node_v1/mainwindow.cpp
+		../QuizBro_video_node_v1/QuizBro_video_node_v1.pro ../QuizBro_video_node_v1/mainwindow.h \
+		../QuizBro_video_node_v1/DisplayWidget.hpp ../QuizBro_video_node_v1/main.cpp \
+		../QuizBro_video_node_v1/mainwindow.cpp \
+		../QuizBro_video_node_v1/DisplayWidget.cpp
 QMAKE_TARGET  = QuizBro_video_node_v1
 DESTDIR       = 
 TARGET        = QuizBro_video_node_v1
@@ -395,6 +402,7 @@ Makefile: ../QuizBro_video_node_v1/QuizBro_video_node_v1.pro /usr/lib/qt/mkspecs
 		/usr/lib/qt/mkspecs/features/qt_config.prf \
 		/usr/lib/qt/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/qt/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/usr/lib/qt/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/qt/mkspecs/features/toolchain.prf \
 		/usr/lib/qt/mkspecs/features/default_pre.prf \
@@ -415,8 +423,11 @@ Makefile: ../QuizBro_video_node_v1/QuizBro_video_node_v1.pro /usr/lib/qt/mkspecs
 		/usr/lib/qt/mkspecs/features/yacc.prf \
 		/usr/lib/qt/mkspecs/features/lex.prf \
 		../QuizBro_video_node_v1/QuizBro_video_node_v1.pro \
+		/usr/lib/libQt5MultimediaWidgets.prl \
+		/usr/lib/libQt5Multimedia.prl \
 		/usr/lib/libQt5Widgets.prl \
 		/usr/lib/libQt5Gui.prl \
+		/usr/lib/libQt5Network.prl \
 		/usr/lib/libQt5Core.prl
 	$(QMAKE) -o Makefile ../QuizBro_video_node_v1/QuizBro_video_node_v1.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug
 /usr/lib/qt/mkspecs/features/spec_pre.prf:
@@ -574,6 +585,7 @@ Makefile: ../QuizBro_video_node_v1/QuizBro_video_node_v1.pro /usr/lib/qt/mkspecs
 /usr/lib/qt/mkspecs/features/qt_config.prf:
 /usr/lib/qt/mkspecs/linux-g++/qmake.conf:
 /usr/lib/qt/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /usr/lib/qt/mkspecs/features/exclusive_builds.prf:
 /usr/lib/qt/mkspecs/features/toolchain.prf:
 /usr/lib/qt/mkspecs/features/default_pre.prf:
@@ -594,8 +606,11 @@ Makefile: ../QuizBro_video_node_v1/QuizBro_video_node_v1.pro /usr/lib/qt/mkspecs
 /usr/lib/qt/mkspecs/features/yacc.prf:
 /usr/lib/qt/mkspecs/features/lex.prf:
 ../QuizBro_video_node_v1/QuizBro_video_node_v1.pro:
+/usr/lib/libQt5MultimediaWidgets.prl:
+/usr/lib/libQt5Multimedia.prl:
 /usr/lib/libQt5Widgets.prl:
 /usr/lib/libQt5Gui.prl:
+/usr/lib/libQt5Network.prl:
 /usr/lib/libQt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ../QuizBro_video_node_v1/QuizBro_video_node_v1.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug
@@ -612,8 +627,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/qt/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../QuizBro_video_node_v1/mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../QuizBro_video_node_v1/main.cpp ../QuizBro_video_node_v1/mainwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../QuizBro_video_node_v1/mainwindow.h ../QuizBro_video_node_v1/DisplayWidget.hpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../QuizBro_video_node_v1/main.cpp ../QuizBro_video_node_v1/mainwindow.cpp ../QuizBro_video_node_v1/DisplayWidget.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -643,15 +658,20 @@ compiler_moc_predefs_make_all: moc_predefs.h
 compiler_moc_predefs_clean:
 	-$(DEL_FILE) moc_predefs.h
 moc_predefs.h: /usr/lib/qt/mkspecs/features/data/dummy.cpp
-	g++ -pipe -g -Wall -W -dM -E -o moc_predefs.h /usr/lib/qt/mkspecs/features/data/dummy.cpp
+	g++ -pipe -g -std=gnu++1y -Wall -W -dM -E -o moc_predefs.h /usr/lib/qt/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_DisplayWidget.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_DisplayWidget.cpp
 moc_mainwindow.cpp: ../QuizBro_video_node_v1/mainwindow.h \
 		moc_predefs.h \
 		/usr/bin/moc
-	/usr/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/qt/mkspecs/linux-g++ -I/home/jos/git/QuizBro/QuizBro_video_node/QuizBro_video_node_v1 -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I. -I/usr/include/c++/6.3.1 -I/usr/include/c++/6.3.1/x86_64-pc-linux-gnu -I/usr/include/c++/6.3.1/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1/include-fixed -I/usr/include ../QuizBro_video_node_v1/mainwindow.h -o moc_mainwindow.cpp
+	/usr/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/qt/mkspecs/linux-g++ -I/home/jos/git/QuizBro/QuizBro_video_node/QuizBro_video_node_v1 -I/usr/include/qt -I/usr/include/qt/QtMultimediaWidgets -I/usr/include/qt/QtMultimedia -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtNetwork -I/usr/include/qt/QtCore -I. -I/usr/include/c++/6.3.1 -I/usr/include/c++/6.3.1/x86_64-pc-linux-gnu -I/usr/include/c++/6.3.1/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1/include-fixed -I/usr/include ../QuizBro_video_node_v1/mainwindow.h -o moc_mainwindow.cpp
+
+moc_DisplayWidget.cpp: ../QuizBro_video_node_v1/DisplayWidget.hpp \
+		moc_predefs.h \
+		/usr/bin/moc
+	/usr/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/qt/mkspecs/linux-g++ -I/home/jos/git/QuizBro/QuizBro_video_node/QuizBro_video_node_v1 -I/usr/include/qt -I/usr/include/qt/QtMultimediaWidgets -I/usr/include/qt/QtMultimedia -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtNetwork -I/usr/include/qt/QtCore -I. -I/usr/include/c++/6.3.1 -I/usr/include/c++/6.3.1/x86_64-pc-linux-gnu -I/usr/include/c++/6.3.1/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1/include-fixed -I/usr/include ../QuizBro_video_node_v1/DisplayWidget.hpp -o moc_DisplayWidget.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -670,11 +690,18 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 main.o: ../QuizBro_video_node_v1/main.cpp ../QuizBro_video_node_v1/mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../QuizBro_video_node_v1/main.cpp
 
-mainwindow.o: ../QuizBro_video_node_v1/mainwindow.cpp ../QuizBro_video_node_v1/mainwindow.h
+mainwindow.o: ../QuizBro_video_node_v1/mainwindow.cpp ../QuizBro_video_node_v1/mainwindow.h \
+		../QuizBro_video_node_v1/DisplayWidget.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../QuizBro_video_node_v1/mainwindow.cpp
+
+DisplayWidget.o: ../QuizBro_video_node_v1/DisplayWidget.cpp ../QuizBro_video_node_v1/DisplayWidget.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o DisplayWidget.o ../QuizBro_video_node_v1/DisplayWidget.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
+
+moc_DisplayWidget.o: moc_DisplayWidget.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_DisplayWidget.o moc_DisplayWidget.cpp
 
 ####### Install
 
