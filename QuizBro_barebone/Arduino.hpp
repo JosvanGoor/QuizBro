@@ -1,9 +1,12 @@
 #ifndef QUIZBRO_ARDUINO_HPP
 #define QUIZBRO_ARDUINO_HPP
 
+#include <QDebug>
 #include <QThread>
 #include <QIODevice>
 #include <QSerialPort>
+
+#define SERIAL_HANDLE "/dev/ttyACM0"
 
 enum ArduinoSignal
 {
@@ -39,6 +42,9 @@ class Arduino : public QThread
         void set_button_state(int button, int state);
 
         virtual void run() override;
+
+    protected slots:
+        void input_posted(); //channelReadyRead
 
     signals:
         void arduino_signal(short signal);

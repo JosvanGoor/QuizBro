@@ -3,8 +3,11 @@
 
 #include <QLabel>
 #include <QFrame>
+#include <QDebug>
 #include <QMainWindow>
 #include <QSoundEffect>
+
+#include "Arduino.hpp"
 
 namespace Ui {
 class MainWindow;
@@ -19,10 +22,12 @@ public:
     ~MainWindow();
 
 public slots:
-    void bouton_pressed(int i); //rgby -> red, green, blue, yellow.
+    void arduino_signal(short i); //rgby -> red, green, blue, yellow.
 
 private:
     Ui::MainWindow *ui;
+
+    Arduino m_arduino;
 
     //statusbar labels
     QLabel *m_audio_status;

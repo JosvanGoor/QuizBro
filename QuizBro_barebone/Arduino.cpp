@@ -1,5 +1,7 @@
 #include "Arduino.hpp"
 
+
+
 Arduino::Arduino(QObject *parent)
     : QThread(parent)
 {
@@ -12,15 +14,26 @@ int Arduino::status()
 
 bool Arduino::connect()
 {   
-    if(m_serial.isOpen()) return;
+    if(m_serial.isOpen()) return true;
 
-    m_serial.setPortName("ttyAMC0");
-    m_serial.open(QIODevice::ReadWrite);
+    m_serial.setPortName(SERIAL_HANDLE);
+    if(!m_serial.open(QIODevice::ReadWrite))
+    {
+        qDebug() << "Failed to connect to port " << SERIAL_HANDLE;
+        qDebug() << "\tReason: " << m_serial.error();
+        arduino_signal(ARDUINO_STATUS_ERROR);
+        return false;
+    }
+
     m_serial.setBaudRate(9600);
     m_serial.setDataBits(QSerialPort::Data8);
     m_serial.setParity(QSerialPort::NoParity);
     m_serial.setStopBits(QSerialPort::OneStop);
-    m_serial.setControlFlow(QSerialPort::NoFlowControl);
+    m_serial.setFlowControl(QSerialPort::NoFlowControl);
+
+    qDebug() << "Succesfully connected to port " << SERIAL_HANDLE;
+    arduino_signal(ARDUINO_STATUS_OK);
+    return true;
 }
 
 void Arduino::set_button_state(int button, int state)
@@ -30,11 +43,18 @@ void Arduino::set_button_state(int button, int state)
 
 void Arduino::run()
 {
-    short data;
 
-    while(m_serial.isOpen())
-    {
-        m_serial.readData(data, sizeof(short));
-        arduino_signal(data);
+    short msg;
+    while(true)
+    {   
+        //dit gaat akelig fout, maar weetje.... er is verbinding woeii!
+        int r = m_serial.read((char*)&msg, sizeof(short));
+        
+        if(r > 0)
+        {
+            qDebug() << "Read from arduino: " << msg;
+            arduino_signal(msg);
+        }
     }
+
 }

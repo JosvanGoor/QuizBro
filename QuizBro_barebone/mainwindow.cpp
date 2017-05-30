@@ -7,6 +7,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    QObject::connect(&m_arduino, SIGNAL(arduino_signal(short)), this, SLOT(arduino_signal(short)));
+
     m_audio_status = new QLabel("AudioNode: n/a");
     m_audio_status->setFrameStyle(QFrame::Panel | QFrame::Sunken);
     m_arduino_status = new QLabel("Arduino: n/a");
@@ -18,9 +20,17 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->status_bar->addPermanentWidget(m_audio_status);
     ui->status_bar->addPermanentWidget(m_arduino_status);
+
+    m_arduino.connect();
+    m_arduino.start();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::arduino_signal(short i)
+{
+    qDebug() << "Arduino signal: " << i;
 }
