@@ -20,6 +20,8 @@ MainWindow::MainWindow(QWidget *parent)
     window_rect.moveCenter(QApplication::desktop()->availableGeometry().center());
     this->setGeometry(window_rect);
 
+    m_flags = this->windowHandle()->flags();
+
     m_display->display_video("file:///home/jos/Downloads/samples/small.mp4");
     //m_display->display_image("//home/jos/Downloads/samples/bunny.jpg");
 
@@ -34,7 +36,7 @@ void MainWindow::fullscreen()
 
 void MainWindow::exit_fullscreen()
 {
-    this->windowHandle()->setFlags(0);
+    this->windowHandle()->setFlags(m_flags);
     QRect window_rect(QPoint(), QSize(1376, 768));
     window_rect.moveCenter(QApplication::desktop()->availableGeometry().center());
     this->setGeometry(window_rect);

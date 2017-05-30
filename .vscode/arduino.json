@@ -1,5 +1,5 @@
 {
-    "board": "arduino:avr:unowifi",
+    "board": "arduino:avr:uno",
     "sketch": "arduino_code/arduino.ino",
-    "port": "/dev/ttyACM0"
+    "port": "/dev/ttyS0"
 }

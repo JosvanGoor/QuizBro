@@ -24,9 +24,9 @@ DisplayWidget::DisplayWidget(QWidget *parent)
     m_media_player->setMuted(true);
 
     //set slideshow stuff to null
-    index = 0;
-    files = nullptr;
-    timer = nullptr;
+    m_slideshow_index = 0;
+    m_slideshow_files = nullptr;
+    m_slideshow_timer = nullptr;
 }
 
 DisplayWidget::~DisplayWidget()
@@ -35,6 +35,8 @@ DisplayWidget::~DisplayWidget()
     delete m_media_playlist;
     delete m_video_widget;
     delete m_image_display;
+
+
 }
 
 void DisplayWidget::set_muted(bool b)
@@ -44,23 +46,24 @@ void DisplayWidget::set_muted(bool b)
 
 void DisplayWidget::stop_slideshow()
 {
-    if(timer != nullptr)
+    if(m_slideshow_timer != nullptr)
     {
-        delete files;
-        delete timer;
-        files = nullptr;
-        timer = nullptr;
+        delete m_slideshow_timer;
+        m_slideshow_timer = nullptr;
+    }
+    if(m_slideshow_files != nullptr)
+    {
+        delete m_slideshow_files;
+        m_slideshow_files = nullptr;
     }
 }
 
-void DisplayWidget::enable_slideshow(int interval, QString filelist)
+void DisplayWidget::enable_slideshow(int interval, QString filelist, bool random_order)
 {
-    if(timer != nullptr)
-    {
-        stop_slideshow();
-    }
+    stop_slideshow(); //has no effect if no slideshow is running.
+    m_media_player->stop(); //EXPERIMENTAL
 
-    files = new QList<QString>();
+    m_slideshow_files = new QList<QString>();
 
     QFile input(filelist);
     if(input.open(QIODevice::ReadOnly))
@@ -69,7 +72,7 @@ void DisplayWidget::enable_slideshow(int interval, QString filelist)
         while(!in.atEnd())
         {
             QString line = in.readLine();
-            files->push_back(line);
+            m_slideshow_files->push_back(line);
         }
         input.close();
     }
@@ -79,10 +82,11 @@ void DisplayWidget::enable_slideshow(int interval, QString filelist)
         return;
     }
 
-    index = 0;
-    timer = new QTimer(this);
-    connect(timer, SIGNAL(timeout()), this, SLOT(next_slide()));
-    timer->start(interval);
+    m_slideshow_index = 0;
+    m_random_order = random_order;
+    m_slideshow_timer = new QTimer(this);
+    connect(m_slideshow_timer, SIGNAL(timeout()), this, SLOT(next_slide()));
+    m_slideshow_timer->start(interval);
 
     next_slide();
 }
@@ -96,6 +100,9 @@ void DisplayWidget::display_image(QString file)
         return;
     }
 
+    stop_slideshow();
+    m_media_player->stop();
+
     m_image_display->setPixmap(image);
     m_image_display->show();
     m_video_widget->hide();
@@ -106,6 +113,7 @@ void DisplayWidget::display_video(QString file)
     m_media_playlist->clear();
     m_media_playlist->addMedia(QUrl(file));
     m_media_playlist->setCurrentIndex(0);
+    stop_slideshow();
 
     m_media_player->play();
 
@@ -124,10 +132,12 @@ void DisplayWidget::resizeEvent(QResizeEvent *event)
 void DisplayWidget::next_slide()
 {
     static QDir root;
-    qDebug() << __PRETTY_FUNCTION__ << " showing image " << root.absolutePath() + "/" + files->at(index);
+    if(m_random_order && m_slideshow_index == 0) std::random_shuffle(m_slideshow_files->begin(), m_slideshow_files->end());
 
-    display_image(root.absolutePath() + "/" + files->at(index));
-    index++;
+    qDebug() << __PRETTY_FUNCTION__ << " showing image " << root.absolutePath() + "/" + m_slideshow_files->at(m_slideshow_index);
+
+    display_image(root.absolutePath() + "/" + m_slideshow_files->at(m_slideshow_index));
+    m_slideshow_index = (m_slideshow_index + 1) % m_slideshow_files->size();
 }
 
 void DisplayWidget::media_player_state_change(QMediaPlayer::State state)

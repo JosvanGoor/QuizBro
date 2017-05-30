@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>453</width>
+    <height>526</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QGroupBox" name="box_red_button">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>180</y>
+      <width>431</width>
+      <height>73</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Red button</string>
+    </property>
+    <widget class="QLabel" name="lbl_red_short_audio">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>291</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Short audio:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_red_long_audio">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>291</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Long audio:</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_red_set_short_audio">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>20</y>
+       <width>131</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Set</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_red_set_long_audio">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>50</y>
+       <width>131</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Set</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="box_green_button">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>260</y>
+      <width>431</width>
+      <height>73</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Green button</string>
+    </property>
+    <widget class="QLabel" name="lbl_green_short_audio">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>291</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Short audio:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_green_long_audio">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>291</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Long audio:</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_green_set_short_audio">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>20</y>
+       <width>131</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Set</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_green_set_long_audio">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>50</y>
+       <width>131</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Set</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="box_yellow_button">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>420</y>
+      <width>431</width>
+      <height>73</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Yellow button</string>
+    </property>
+    <widget class="QLabel" name="lbl_yellow_short_audio">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>291</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Short audio:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_yellow_long_audio">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>291</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Long audio:</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_yellow_set_short_audio">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>20</y>
+       <width>131</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Set</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_yellow_set_long_audio">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>50</y>
+       <width>131</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Set</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="box_blue_button">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>340</y>
+      <width>431</width>
+      <height>73</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Blue button</string>
+    </property>
+    <widget class="QLabel" name="lbl_blue_short_audio">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>291</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Short audio:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_blue_long_audio">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>291</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Long audio:</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_blue_set_short_audio">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>20</y>
+       <width>131</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Set</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_blue_set_long_audio">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>50</y>
+       <width>131</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Set</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="box_button_control">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>231</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="title">
+     <string>Button control:</string>
+    </property>
+    <widget class="QLabel" name="lbl_fastest_press">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>211</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Latest press:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_press_info">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>40</y>
+       <width>191</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;name&gt;</string>
+     </property>
+    </widget>
+    <widget class="Line" name="line">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>60</y>
+       <width>231</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rb_buzzer_beater">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>110</y>
+       <width>211</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&quot;Beat the buzzer&quot; Mode</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rb_free_buzzer">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>211</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&quot;Free buzzer&quot; Mode</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_unlock_buzzers">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>211</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Unlock buzzers</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="box_audiocontrol">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>0</y>
+      <width>191</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Audio control</string>
+    </property>
+    <widget class="QLabel" name="lbl_now_playing">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>171</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Now playing:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_audio_info">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>40</y>
+       <width>151</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;color/length&gt;</string>
+     </property>
+    </widget>
+    <widget class="Line" name="line_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>60</y>
+       <width>191</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rb_play_short">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>171</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Play short fragment</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rb_play_long">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>171</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Play long fragment</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="chb_mute">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>171</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Mute</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="chb_simultaneous">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>171</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Allow simultaneous</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="status_bar">
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

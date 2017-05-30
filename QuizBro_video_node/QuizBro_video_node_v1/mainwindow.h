@@ -17,6 +17,7 @@ public:
 
 protected:
     DisplayWidget *m_display;
+    Qt::WindowFlags m_flags;
 };
 
 #endif // MAINWINDOW_H
