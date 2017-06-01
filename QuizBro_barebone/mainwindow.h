@@ -22,6 +22,8 @@ public:
     ~MainWindow();
 
 public slots:
+    void unlock_buzzers(); //button
+    void mode_toggled(bool b); //radiobutton mode check
     void arduino_signal(short i); //rgby -> red, green, blue, yellow.
 
 private:
@@ -34,6 +36,8 @@ private:
     QLabel *m_arduino_status;
 
     bool m_beat_buzzer_mode;
+    short m_btb_winner;
+    bool m_arduino_connected;
     bool m_play_long_fragment;
     bool m_allow_simultaneous_audio;
 

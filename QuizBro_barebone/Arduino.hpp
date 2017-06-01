@@ -11,12 +11,14 @@
 enum ArduinoSignal
 {
     NO_EVENT                =   0b0000000000000000,
+    NO_BOUTON               =   0b0000000000000000,
     RED_BOUTON              =   0b0000000000000001,
     GREEN_BOUTON            =   0b0000000000000010,
     BLUE_BOUTON             =   0b0000000000000100,
     YELLOW_BOUTON           =   0b0000000000001000,
-    ALL_BOUTONS             =   0b0000000000010000,
+    ALL_BOUTONS             =   0b0000000000001111,
 
+    ARDUINO_STATUS_DISC     =   0b0100000000000000,
     ARDUINO_STATUS_ERROR    =   0b0000000000000000,
     ARDUINO_STATUS_OK       =   0b0000000000000001,
 
@@ -39,7 +41,7 @@ class Arduino : public QThread
 
         int status();
         bool connect(); //todo: disconnect
-        void set_button_state(int button, int state);
+        void set_button_state(short button, short state);
 
         virtual void run() override;
 
@@ -52,5 +54,7 @@ class Arduino : public QThread
     private:
         QSerialPort m_serial;
 };
+
+QString bouton_by_name(short as);
 
 #endif
