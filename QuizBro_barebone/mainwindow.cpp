@@ -30,6 +30,8 @@ MainWindow::MainWindow(QWidget *parent) :
     //connect to mode radiobuttons
     QObject::connect(ui->rb_buzzer_beater, SIGNAL(toggled(bool)), this, SLOT(mode_toggled(bool)));
     QObject::connect(ui->rb_free_buzzer, SIGNAL(toggled(bool)), this, SLOT(mode_toggled(bool)));
+    QObject::connect(ui->rb_play_long, SIGNAL(toggled(bool)), this, SLOT(mode_toggled(bool)));
+    QObject::connect(ui->rb_play_short, SIGNAL(toggled(bool)), this, SLOT(mode_toggled(bool)));
 
     //connect audiobuttons
     QObject::connect(ui->btn_red_set_long_audio, SIGNAL(clicked()), this, SLOT(set_audio()));
@@ -111,6 +113,15 @@ void MainWindow::mode_toggled(bool b)
     {
         m_beat_buzzer_mode = false;
         m_arduino.set_button_state(ALL_BOUTONS, 1000);
+    }
+
+    if(ui->rb_play_long->isChecked())
+    {
+        m_play_long_fragment = true;
+    }
+    else
+    {
+        m_play_long_fragment = false;
     }
 }
 
