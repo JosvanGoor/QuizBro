@@ -77,17 +77,17 @@ void MainWindow::play(short i)
 
     if(m_play_long_fragment)
     {
-        if(i & RED_BOUTON) m_red_audio_long.play();
-        if(i & BLUE_BOUTON) m_blue_audio_long.play();
-        if(i & GREEN_BOUTON) m_green_audio_long.play();
-        if(i & YELLOW_BOUTON) m_yellow_audio_long.play();
+        if((i & RED_BOUTON) && !m_red_audio_long.isPlaying()) m_red_audio_long.play();
+        if((i & BLUE_BOUTON) && !m_blue_audio_long.isPlaying()) m_blue_audio_long.play();
+        if((i & GREEN_BOUTON) && !m_green_audio_long.isPlaying()) m_green_audio_long.play();
+        if((i & YELLOW_BOUTON) && !m_yellow_audio_long.isPlaying()) m_yellow_audio_long.play();
     }
     else
     {
-        if(i & RED_BOUTON) m_red_audio_short.play();
-        if(i & BLUE_BOUTON) m_blue_audio_short.play();
-        if(i & GREEN_BOUTON) m_green_audio_short.play();
-        if(i & YELLOW_BOUTON) m_yellow_audio_short.play();
+        if((i & RED_BOUTON) && !m_red_audio_short.isPlaying()) m_red_audio_short.play();
+        if((i & BLUE_BOUTON) && !m_blue_audio_short.isPlaying()) m_blue_audio_short.play();
+        if((i & GREEN_BOUTON) && !m_green_audio_short.isPlaying()) m_green_audio_short.play();
+        if((i & YELLOW_BOUTON) && !m_yellow_audio_short.isPlaying()) m_yellow_audio_short.play();
     }
 }
 
