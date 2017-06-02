@@ -36,6 +36,7 @@ bool Arduino::connect()
     QThread::sleep(2.5); //wait for the interface to settle.
     qDebug() << "Succesfully connected to port " << SERIAL_HANDLE;
     arduino_signal(ARDUINO_STATUS_OK);
+    return true;
 }
 
 void Arduino::run()
