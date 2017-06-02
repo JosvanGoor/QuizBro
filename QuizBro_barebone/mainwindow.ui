@@ -406,7 +406,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>&lt;color/length&gt;</string>
+      <string>feature unavailable...</string>
      </property>
     </widget>
     <widget class="Line" name="line_2">

@@ -22,10 +22,6 @@ void Bouton::led_program(int i)
 {
     m_program = i;
     m_timer = millis();
-
-    //debug statement
-    //Serial.print("Received led_program update: ");
-    //Serial.println(i);
 }
 
 void Bouton::swap_state()

@@ -1,9 +1,9 @@
 #include "Bouton.hpp"
 
-Bouton b_red(5, 13);
-Bouton b_blue(7, 12);
+Bouton b_red(2, 13);
+Bouton b_blue(4, 12);
 Bouton b_green(6, 11);
-Bouton b_yellow(4, 10);
+Bouton b_yellow(8, 10);
 
 enum ArduinoSignal
 {

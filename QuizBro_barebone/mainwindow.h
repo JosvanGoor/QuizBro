@@ -6,6 +6,7 @@
 #include <QDebug>
 #include <QMainWindow>
 #include <QSoundEffect>
+#include <QFileDialog>
 
 #include "Arduino.hpp"
 
@@ -21,10 +22,17 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+    bool any_playing(); //returns wether any soundeffect is playing.
+    void play(short i); //plays sound for i.
+
 public slots:
     void unlock_buzzers(); //button
     void mode_toggled(bool b); //radiobutton mode check
     void arduino_signal(short i); //rgby -> red, green, blue, yellow.
+
+    void set_audio(); //set audio buttons
+    void toggle_mute(int state); //mute checkbox.
+    void toggle_simultaneous(int state); //simultaneous audio.
 
 private:
     Ui::MainWindow *ui;
