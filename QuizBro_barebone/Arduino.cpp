@@ -5,7 +5,6 @@
 Arduino::Arduino(QObject *parent)
     : QThread(parent)
 {
-    m_serial.setTextModeEnabled(true);
     QObject::connect(&m_serial, SIGNAL(readyRead()), this, SLOT(input_posted()));
 }
 
@@ -36,6 +35,7 @@ bool Arduino::connect()
     QThread::sleep(2.5); //wait for the interface to settle.
     qDebug() << "Succesfully connected to port " << SERIAL_HANDLE;
     arduino_signal(ARDUINO_STATUS_OK);
+    return true;
 }
 
 void Arduino::run()
@@ -47,7 +47,7 @@ void Arduino::run()
 void Arduino::set_button_state(short button, short state)
 {
     QByteArray buf = QByteArray::number(button).append(" ").append(QByteArray::number(state));
-    qDebug() << __PRETTY_FUNCTION__ << " sending \"" << buf << "\"";
+    qDebug() << __PRETTY_FUNCTION__ << " sending " << buf;
     m_serial.write(buf);
 }
 
@@ -56,9 +56,8 @@ void Arduino::input_posted()
     qDebug() << __PRETTY_FUNCTION__;
     while(m_serial.canReadLine())
     {
-        qDebug() << "Entered while";
         QByteArray bar = m_serial.readLine();
-        qDebug() << __PRETTY_FUNCTION__ <<"Arduino sent: " << bar;
+        qDebug() << __PRETTY_FUNCTION__ <<" received: " << bar;
         arduino_signal((short)bar.trimmed().toInt());
     }
 }

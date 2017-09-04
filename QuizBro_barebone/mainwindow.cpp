@@ -173,6 +173,10 @@ void MainWindow::set_audio()
             m_red_audio_short.setSource(file_url);
             label.prepend("Short audio: ");
             ui->lbl_red_short_audio->setText(label);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9591b21f075c2949a31774fb6a56f2c09d0824e1
             m_red_audio_short.play();
         }
         else if(sender->objectName().contains(QString("long")))
@@ -233,18 +237,6 @@ void MainWindow::toggle_mute(int state)
 {
     if(state == Qt::Checked)
     {
-        m_red_audio_long.setMuted(false);
-        m_red_audio_short.setMuted(false);
-        m_blue_audio_long.setMuted(false);
-        m_blue_audio_short.setMuted(false);
-        m_green_audio_long.setMuted(false);
-        m_green_audio_short.setMuted(false);
-        m_yellow_audio_long.setMuted(false);
-        m_yellow_audio_short.setMuted(false);
-        qDebug() << "Audio muted...";
-    } 
-    else 
-    {
         m_red_audio_long.setMuted(true);
         m_red_audio_short.setMuted(true);
         m_blue_audio_long.setMuted(true);
@@ -253,6 +245,18 @@ void MainWindow::toggle_mute(int state)
         m_green_audio_short.setMuted(true);
         m_yellow_audio_long.setMuted(true);
         m_yellow_audio_short.setMuted(true);
+        qDebug() << "Audio muted...";
+    } 
+    else 
+    {
+        m_red_audio_long.setMuted(false);
+        m_red_audio_short.setMuted(false);
+        m_blue_audio_long.setMuted(false);
+        m_blue_audio_short.setMuted(false);
+        m_green_audio_long.setMuted(false);
+        m_green_audio_short.setMuted(false);
+        m_yellow_audio_long.setMuted(false);
+        m_yellow_audio_short.setMuted(false);
         qDebug() << "Audio unmuted...";
     }
 }
