@@ -173,6 +173,7 @@ void MainWindow::set_audio()
             m_red_audio_short.setSource(file_url);
             label.prepend("Short audio: ");
             ui->lbl_red_short_audio->setText(label);
+            m_red_audio_short.play();
         }
         else if(sender->objectName().contains(QString("long")))
         {
