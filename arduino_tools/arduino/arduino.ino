@@ -27,8 +27,6 @@ enum ArduinoSignal
     BUTTON_STATE_OFF_PUSH   =   -3
 };
 
-int count = 0;
-
 int fatoi(const char *str)
 {
     int val = 0;
@@ -43,7 +41,7 @@ int fatoi(const char *str)
 
 void setup()
 {
-    Serial.begin(57600);
+    Serial.begin(57600); //57600
     Serial.setTimeout(2);
 
     b_red.led_program(1000);
