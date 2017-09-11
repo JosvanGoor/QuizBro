@@ -45,9 +45,15 @@ void setup()
     Serial.setTimeout(2);
 
     b_red.led_program(1000);
+
     b_blue.led_program(1000);
+    b_blue.manipulate_timer(250);
+
     b_green.led_program(1000);
+    b_green.manipulate_timer(500);
+
     b_yellow.led_program(1000);
+    b_yellow.manipulate_timer(750);
 }
 
 void action_input(int button, int state)

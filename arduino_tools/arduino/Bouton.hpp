@@ -22,6 +22,7 @@ public:
 
     int led_program();    
     void led_program(int i);
+    void manipulate_timer(int i); // adds i to timer
 
     void act(); //does blinking etc.
     void swap_state(); //turns led to opposite state

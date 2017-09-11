@@ -8,7 +8,7 @@ DisplayWidget::DisplayWidget(QWidget *parent)
     m_image_primary = new QLabel("", this);
     m_image_primary->setObjectName(QStringLiteral("m_image_primary"));
     m_image_primary->setGeometry(0, 0, 10, 10);
-    m_image_primary->setPixmap(QPixmap("images/test1.jpg"));
+    m_image_primary->setPixmap(QPixmap(":/resources/logo.png"));
 
     m_image_secondary = new QLabel("", this);
     m_image_secondary->setObjectName(QStringLiteral("m_image_secondary"));

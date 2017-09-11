@@ -6,8 +6,8 @@
 #include <QIODevice>
 #include <QSerialPort>
 
-//#define SERIAL_HANDLE "/dev/ttyACM0"
-#define SERIAL_HANDLE "COM3"
+#define SERIAL_HANDLE "/dev/ttyACM0"
+//#define SERIAL_HANDLE "COM3"
 
 enum ArduinoSignal
 {

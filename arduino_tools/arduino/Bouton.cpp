@@ -24,6 +24,11 @@ void Bouton::led_program(int i)
     m_timer = millis();
 }
 
+void Bouton::manipulate_timer(int i)
+{
+    m_timer += i;
+}
+
 void Bouton::swap_state()
 {
     if(m_led_on)
