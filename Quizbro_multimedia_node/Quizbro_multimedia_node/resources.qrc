@@ -1,0 +1,6 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>resources/logo.png</file>
+    <file>resources/logo_neg.png</file>
+</qresource>
+</RCC>
