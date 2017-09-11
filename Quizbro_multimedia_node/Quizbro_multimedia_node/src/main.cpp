@@ -1,6 +1,7 @@
 #include <QApplication>
 
 #include "Window.hpp"
+#include "../testwindow.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -9,7 +10,8 @@ int main(int argc, char *argv[])
     Window w;
     w.show();
 
-    w.display_widget()->display_image(":/resources/logo_neg.png");
+    TestWindow tw(w.display_widget());
+    tw.show();
 
     return a.exec();
 }

@@ -14,7 +14,7 @@ class TestWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit TestWindow(QWidget *parent = 0);
+    explicit TestWindow(DisplayWidget *display, QWidget *parent = 0);
     ~TestWindow();
     
 public slots:
@@ -22,6 +22,7 @@ public slots:
 
 private:
     Ui::TestWindow *ui;
+    DisplayWidget *m_display;
 };
 
 #endif // TESTWINDOW_HPP

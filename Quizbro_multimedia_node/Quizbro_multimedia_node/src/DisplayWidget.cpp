@@ -43,11 +43,10 @@ void DisplayWidget::display_image(const QString &file)
         QGraphicsOpacityEffect *eff = new QGraphicsOpacityEffect(this);
         m_image_primary->setGraphicsEffect(eff);
         QPropertyAnimation *a = new QPropertyAnimation(eff, "opacity");
-        a->setDuration(2500);
+        a->setDuration(3500);
         a->setStartValue(1.0);
         a->setEndValue(0.0);
-//        a->setEasingCurve(QEasingCurve::OutBack);
-        a->setEasingCurve(QEasingCurve::OutCubic);
+        a->setEasingCurve(QEasingCurve::OutBack);
         a->start(QPropertyAnimation::DeleteWhenStopped);
         connect(a, SIGNAL(finished()), this, SLOT(hide_inactive_layers()));
 
