@@ -41,3 +41,21 @@ void TestWindow::swap_image()
         m_display->display_image(":/resources/test2.png");
     }
 }
+
+void TestWindow::swap_video()
+{
+    QObject *sender = QObject::sender();
+
+    if(sender->objectName() == QString("btn_vid_short"))
+    {
+        m_display->display_video("~/vid_ex/short.mp4");
+    }
+    else if(sender->objectName() == QString("btn_vid_medium"))
+    {
+        m_display->display_video("~/vid_ex/medium.mp4");
+    }
+    else if(sender->objectName() == QString("btn_vid_long"))
+    {
+        m_display->display_video("~/vid_ex/long.mp4");
+    }
+}

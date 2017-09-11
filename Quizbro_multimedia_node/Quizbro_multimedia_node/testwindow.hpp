@@ -19,6 +19,7 @@ public:
     
 public slots:
     void swap_image();
+    void swap_video();
 
 private:
     Ui::TestWindow *ui;

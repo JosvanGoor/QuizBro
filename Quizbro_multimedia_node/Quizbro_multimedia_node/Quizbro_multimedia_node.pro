@@ -4,7 +4,10 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT  += core 
+QT  += gui
+QT  += multimedia
+QT  += multimediawidgets
 
 CONFIG  += c++17
 
