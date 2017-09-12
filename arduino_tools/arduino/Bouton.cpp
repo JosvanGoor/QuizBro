@@ -22,6 +22,12 @@ void Bouton::led_program(int i)
 {
     m_program = i;
     m_timer = millis();
+
+    if(i > 0)
+    {
+        m_led_on = true;
+        digitalWrite(m_port_led, HIGH);
+    }
 }
 
 void Bouton::manipulate_timer(int i)
